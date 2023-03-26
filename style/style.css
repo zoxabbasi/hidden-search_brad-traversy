@@ -1,0 +1,70 @@
+/* Class "active" will expand the input box and button will move over */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Set the position "relative" so that we can position the things inside of it as absolute */
+.search {
+    position: relative;
+    height: 50px;
+}
+
+
+.search .input {
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+
+    /* Transition on width property of the input tag to expand it */
+    transition: width 0.3s ease;
+}
+
+.button {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+
+    /* To position the icon in the center of input tag */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+
+    /* Transition on the button to get pushed over to the right§ */
+    transition: transform 0.3s ease;
+}
+
+.button:focus,
+.input:focus {
+    outline: none;
+}
+
+/* Search "input tag" but when it is active, apply the following properties */
+.search.active .input {
+    width: 200px;
+}
+
+/* Search "button" but when it is active, apply the following properties */
+.search.active .button {
+
+    /*Move the button on the X axis (right)*/
+   transform: translateX(198px);
+}
